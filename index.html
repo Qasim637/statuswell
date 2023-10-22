@@ -5,179 +5,217 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-         <style>
-        /* Custom CSS for responsive design and styling */
-        body {
-            background: url('diabetes-background.png') no-repeat center center fixed;
-            background-size: cover;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .overlay {
-            background-color: rgba(0, 0, 0, 0.6);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .container {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            max-width: 800px;
-            text-align: center;
-        }
-
-        .questionnaire {
-            text-align: center;
-        }
-
-        .step {
-            display: none;
-            width: 100%;
-        }
-
-        .step.active {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .step-title {
-            font-size: 24px;
-            display: flex;
-            align-items: center;
-        }
-
-        .back-button {
-            font-size: 24px;
-            color: #333;
-            cursor: pointer;
-            margin-right: 10px;
-        }
-
-        .step-content {
-            margin: 20px 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-
-        .btn-primary {
-            background-color: #007B7F;
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            width: 100%;
-            padding: 12px;
-            font-size: 18px;
-            margin: 10px 0;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .btn-primary:hover {
-            background-color: #005C5F;
-        }
-
-        .btn-selected {
-            background-color: #005C5F;
-        }
-
-        .btn-selected:hover {
-            background-color: #005C5F;
-        }
-
-        .form-control {
-            border: 2px solid #007B7F;
-            border-radius: 5px;
-            padding: 10px;
-            font-size: 16px;
-            width: 100%;
-        }
-
-        .summary {
-            text-align: left;
-            background-color: #f7f7f7;
-            padding: 20px;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            margin: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
-            z-index: 1;
-        }
-
-        .modal-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
-
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .modal-button {
-            background-color: #007B7F;
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            width: 100%;
-            padding: 12px;
-            font-size: 18px;
-            margin: 10px 0;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-button:hover {
-            background-color: #005C5F;
-        }
-
-        @media (min-width: 768px) {
-            .step-content {
-                flex-direction: row;
-                justify-content: center;
-                width: 33%;
-            }
-              .container {
-        width: 70%; /* Adjust the width for desktop screens */
+    <style>
+        :root {
+        --primary-background-color: #4682B4;
+        --secondary-background-color: rgba(0, 0, 0, 0.6);
+        --text-color: #000;
+        --button-background-color: var(--primary-background-color);
+        --button-text-color: #fff;
+        --button-hover-background-color: #35648D;
+        --container-background-color: #fff;
+        --container-border-radius: 10px;
+        --container-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        --container-max-width: 800px;
+        --container-padding: 30px;
+        --container-text-align: center;
+        --form-control-border: 2px solid var(--primary-background-color);
+        --form-control-border-radius: 5px;
+        --summary-background-color: #f7f7f7;
+        --summary-border: 2px solid #ddd;
+        --summary-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        --modal-background-color: rgba(0, 0, 0, 0.4);
+        --modal-content-background-color: #fff;
+        --modal-content-border-radius: 10px;
+        --modal-content-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        --close-button-color: #fff;
+        --close-button-background-color:  var(--primary-background-color);
+        --close-button-hover-background-color: var(--button-hover-background-color);
+        --modal-button-background-color: var(--primary-background-color);
+        --modal-button-text-color: #fff;
+        --modal-button-hover-background-color: var(--button-hover-background-color);
     }
+
+    body {
+        background: url('diabetes-background2.png') no-repeat center center fixed;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: var(--primary-background-color);
+        color: var(--text-color);
+    }
+
+    .overlay {
+        background-color: var(--secondary-background-color);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .container {
+        background-color: var(--container-background-color);
+        padding: var(--container-padding);
+        border-radius: var(--container-border-radius);
+        box-shadow: var(--container-box-shadow);
+        max-width: var(--container-max-width);
+        text-align: var(--container-text-align);
+        width: 85%; /* Adjust the width for desktop screens */
+    }
+
+    .questionnaire {
+        text-align: center;
+    }
+
+    .step {
+        display: none;
+        width: 100%;
+    }
+
+    .step.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step-title {
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+    }
+
+    .back-button {
+        font-size: 24px;
+        color: var(--text-color);
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .step-content {
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn-primary {
+        background-color: var(--button-background-color);
+        border: none;
+        border-radius: 5px;
+        color: var(--button-text-color);
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        margin: 10px 0;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-primary:hover {
+        background-color: var(--button-hover-background-color);
+    }
+
+    .btn-selected {
+        background-color: var(--button-hover-background-color);
+    }
+
+    .btn-selected:hover {
+        background-color: var(--button-hover-background-color);
+    }
+
+    .form-control {
+        border: var(--form-control-border);
+        border-radius: var(--form-control-border-radius);
+        padding: 10px;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .summary {
+        text-align: left;
+        background-color: var(--summary-background-color);
+        padding: 20px;
+        border: var(--summary-border);
+        border-radius: var(--summary-border-radius);
+        margin: 20px;
+        box-shadow: var(--summary-box-shadow);
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--modal-background-color);
+        z-index: 1;
+    }
+
+    .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: var(--modal-content-background-color);
+        padding: 50px;
+        border-radius: var(--modal-content-border-radius);
+        box-shadow: var(--modal-content-box-shadow);
+        text-align: center;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        color: var(--close-button-color);
+        background-color: var(--close-button-background-color);
+    }
+
+    .close:hover {
+        background-color: var(--close-button-hover-background-color);
+    }
+
+    .modal-button {
+        background-color: var(--modal-button-background-color);
+        border: none;
+        border-radius: var(--form-control-border-radius);
+        color: var(--modal-button-text-color);
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        margin: 10px 0;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-button:hover {
+        background-color: var(--modal-button-hover-background-color);
+    }
+
+    @media (min-width: 768px) {
+        .step-content {
+            flex-direction: row;
+            justify-content: center;
+            width: 33%;
         }
-    </style>
+        .container{
+            width: 70%;
+        }
+    }
+</style>
 </head>
 
 <body>
@@ -241,13 +279,12 @@
                         <span class="back-button" onclick="prevStep(4)"><i class="fas fa-arrow-left"></i></span>
                         <span>Step 4: Diabetes Status</span>
                     </div>
-                       <div class="step-content">
+                    <div class="step-content">
                         <button class="btn btn-primary" type="button" onclick="showDiabetesModal('Type 2 Diabetes')">Type 2 Diabetes</button>
                     </div>
                     <div class="step-content">
                         <button class="btn btn-primary" type="button" onclick="showDiabetesModal('Pre-diabetes')">Pre-diabetes</button>
                     </div>
-                   
                     <div class="step-content">
                         <button class="btn btn-primary" type="button" onclick="nextStep(4, 'No')">No</button>
                     </div>
@@ -301,7 +338,7 @@
                         <span>Step 8: Pregnancy</span>
                     </div>
                     <div class="step-content">
-                        <button class="btn btn-primary" type="button" onclick="nextStep(8, 'Yes')">Yes</button>
+                        <button class="btn btn-primary" type="button" onclick="updatePregnancy('Yes')">Yes</button>
                     </div>
                     <div class="step-content">
                         <button class="btn btn-primary" type="button" onclick="nextStep(8, 'No')">No</button>
@@ -333,11 +370,11 @@
                         <span>Step 10: Phone Number and Agreement</span>
                     </div>
                     <div class="step-content">
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number" required>
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number" required oninput="updatePhoneNumber()">
                     </div>
                     <div class="step-content">
                         <label for="agreement" class="form-check-label">Agree to text messages/contact at the phone number provided and accept our <a href="privacy.html" target="_blank">privacy policy</a> and <a href="terms.html" target="_blank">terms of use</a>:</label>
-                        <input type="checkbox" class="form-check-input" id="agreement" name="agreement" required>
+                        <input type="checkbox" class="form-check-input" id="agreement" name="agreement" required onchange="updateAgreement(this.checked ? 'Agreed' : 'Not Agreed')">
                     </div>
                     <div class="step-content">
                         <button class="btn btn-primary" type="button" onclick="showSummary()">Complete</button>
@@ -374,31 +411,123 @@
                     </div>
                 </div>
             </form>
-           
         </div>
         <script>
-    // Initialize variables to store the selected options for steps 3 and 4
-    let selectedGender = '';
-    let selectedDiabetes = '';
+        // Initialize variables to store the selected options for steps 3 and 4
+        let selectedGender = '';
+        let selectedDiabetes = '';
 
-    // Function to update the selected option in the summary
-    function updateSummary(step, value) {
-        let summaryGender = document.getElementById('summary-gender');
-        let summaryDiabetes = document.getElementById('summary-diabetes');
+        // Function to update the selected option in the summary
+        function updateSummary(step, value) {
+            let summaryGender = document.getElementById('summary-gender');
+            let summaryDiabetes = document.getElementById('summary-diabetes');
 
-        if (step === 3 && summaryGender) {
-            selectedGender = value;
-            summaryGender.textContent = selectedGender;
-        } else if (step === 4 && summaryDiabetes) {
-            selectedDiabetes = value;
-            summaryDiabetes.textContent = selectedDiabetes;
+            if (step === 3 && summaryGender) {
+                selectedGender = value;
+                summaryGender.textContent = selectedGender;
+            } else if (step === 4 && summaryDiabetes) {
+                selectedDiabetes = value;
+                summaryDiabetes.textContent = selectedDiabetes;
+            }
         }
-    }
 
-    // Function to show a modal with options for Type 2 Diabetes or Pre-diabetes
-    function checkDiabetesStatus(status) {
-        selectedDiabetes = status;
-        if (status === 'Type 2 Diabetes' || status === 'Pre-diabetes') {
+  
+
+        // Function to hide the diabetes status modal
+        function hideDiabetesModal() {
+            const modal = document.getElementById('diabetesModal');
+            modal.style.display = 'none';
+        }
+
+        // Function to update the selected option for Step 8 (Pregnancy)
+        function updatePregnancy(value) {
+            let summaryPregnant = document.getElementById('summary-pregnant');
+            summaryPregnant.textContent = value;
+            if (value === 'Yes') {
+                showMessageModal("We are not taking pregnant patients.");
+            }
+        }
+
+
+   
+
+        // Function to update the selected option for Step 9 (Health Insurance)
+        function updateInsurance(value) {
+            let summaryInsurance = document.getElementById('summary-insurance');
+            summaryInsurance.textContent = value;
+        }
+
+        // Function to update the selected option for Step 10 (Phone Agreement)
+        function updateAgreement(value) {
+            let summaryAgreement = document.getElementById('summary-agreement');
+            summaryAgreement.textContent = value;
+        }
+
+
+        // Function to update the selected option for Step 5 (Medications)
+        function updateMedications() {
+            let summaryMedications = document.getElementById('summary-medications');
+            summaryMedications.textContent = document.getElementById('medications').value;
+        }
+
+        // Function to update the selected option for Step 6 (Height)
+        function updateHeight() {
+            let summaryHeight = document.getElementById('summary-height');
+            summaryHeight.textContent = document.getElementById('height').value;
+        }
+
+        // Function to update the selected option for Step 6 (Weight)
+        function updateWeight() {
+            let summaryWeight = document.getElementById('summary-weight');
+            summaryWeight.textContent = document.getElementById('weight').value;
+        }
+
+        // Function to update the selected option for Step 7 (Allergies)
+        function updateAllergies() {
+            let summaryAllergies = document.getElementById('summary-allergies');
+            summaryAllergies.textContent = document.getElementById('allergies').value;
+        }
+
+        // Function to update the selected option for Step 10 (Phone Number)
+        function updatePhoneNumber() {
+            let summaryPhone = document.getElementById('summary-phone');
+            summaryPhone.textContent = document.getElementById('phone').value;
+        }
+
+        // Function to update the selected option for Step 10 (Agreement)
+        function updateAgreement(value) {
+            let summaryAgreement = document.getElementById('summary-agreement');
+            summaryAgreement.textContent = value;
+        }
+
+
+        // Function to show the age restriction modal
+        function showAgeModal() {
+            const modal = document.getElementById('ageModal');
+            modal.style.display = 'block';
+        }
+
+        // Function to show a modal with a message
+function showMessageModal(message) {
+    const modal = document.getElementById('messageModal');
+    const modalContent = document.getElementById('messageModalContent');
+
+    modal.style.display = 'block';
+    modalContent.textContent = message;
+}
+
+// Function to hide the message modal
+function hideMessageModal() {
+    const modal = document.getElementById('messageModal');
+    modal.style.display = 'none';
+}
+
+
+
+
+        // Function to show the diabetes status modal
+        function showDiabetesModal(status) {
+            selectedDiabetes = status;
             const modal = document.getElementById('diabetesModal');
             const modalContent = document.getElementById('diabetesModalContent');
             const startButton = document.getElementById('startDiabetesButton');
@@ -406,222 +535,187 @@
 
             modal.style.display = 'block';
             modalContent.textContent = `Start your ${diabetesType} test`;
-            startButton.textContent = `Start ${diabetesType} Test`;
-        } else if (status === 'No') {
-            nextStep(4, status); // Proceed to the next step if 'No' is selected.
-        }
-    }
 
-    // Function to hide the diabetes status modal
-    function hideDiabetesModal() {
-        const modal = document.getElementById('diabetesModal');
-        modal.style.display = 'none';
-    }
-
-    // Function to update the selected option for Step 8 (Pregnancy)
-    function updatePregnancy(value) {
-        let summaryPregnant = document.getElementById('summary-pregnant');
-        summaryPregnant.textContent = value;
-        if (value === 'Yes') {
-            showPregnancyAlert();
-        }
-    }
-
-    // Function to show the pregnancy alert
-    function showPregnancyAlert() {
-        alert("We are not taking pregnant patients.");
-    }
-
-    // Function to update the selected option for Step 9 (Health Insurance)
-    function updateInsurance(value) {
-        let summaryInsurance = document.getElementById('summary-insurance');
-        summaryInsurance.textContent = value;
-    }
-
-    // Function to update the selected option for Step 10 (Phone Agreement)
-    function updateAgreement(value) {
-        let summaryAgreement = document.getElementById('summary-agreement');
-        summaryAgreement.textContent = value;
-    }
-
-    // Function to show the age restriction modal
-    function showAgeModal() {
-        const modal = document.getElementById('ageModal');
-        modal.style.display = 'block';
-    }
-    // Function to show the diabetes status modal
-function showDiabetesModal(status) {
-    selectedDiabetes = status;
-    const modal = document.getElementById('diabetesModal');
-    const modalContent = document.getElementById('diabetesModalContent');
-    const startButton = document.getElementById('startDiabetesButton');
-    const diabetesType = status === 'Type 2 Diabetes' ? 'Type 2 Diabetes' : 'Pre-diabetes';
-
-    modal.style.display = 'block';
-    modalContent.textContent = `Start your ${diabetesType} test`;
-
-    if (status === 'Type 2 Diabetes' || status === 'Pre-diabetes') {
-        startButton.style.display = 'block';
-        startButton.textContent = `Start ${diabetesType} Test`;
-        startButton.onclick = function () {
-            // You can add code here to handle the Type 2 Diabetes or Pre-diabetes test.
-            hideDiabetesModal();
-        };
-    } else {
-        startButton.style.display = 'none';
-    }
-}
-
-// Function to hide the diabetes status modal
-function hideDiabetesModal() {
-    const modal = document.getElementById('diabetesModal');
-    modal.style.display = 'none';
-}
-
-
-    // Function to hide the age restriction modal
-    function hideAgeModal() {
-        const modal = document.getElementById('ageModal');
-        modal.style.display = 'none';
-    }
-
-    // Function to show the age restriction modal if the age is less than 18
-    function checkAgeRestriction() {
-        const dateOfBirth = document.getElementById('date-of-birth').value;
-        const today = new Date();
-        const birthDate = new Date(dateOfBirth);
-        const age = today.getFullYear() - birthDate.getFullYear();
-        if (today.getMonth() < birthDate.getMonth() || (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())) {
-            age--;
-        }
-        if (age < 18) {
-            showAgeModal();
-        } else {
-            nextStep(2); // Proceed to the next step (Date of Birth and Email).
-        }
-    }
-
-    // Function to hide the age restriction modal
-    function hideAgeModal() {
-        const modal = document.getElementById('ageModal');
-        modal.style.display = 'none';
-    }
-
-    // Function to navigate to the next step
-    function nextStep(currentStep, value) {
-        let step = document.getElementById('step-' + currentStep);
-        let nextStep = document.getElementById('step-' + (currentStep + 1));
-
-        if (currentStep === 10 && !document.getElementById('agreement').checked) {
-            alert('You must agree to the terms to proceed.');
-        } else if (validateStep(step)) {
-            step.classList.remove('active');
-            nextStep.classList.add('active');
-
-            if (currentStep === 3 || currentStep === 4) {
-                // Store user's selection in the summary
-                updateSummary(currentStep, value);
-            } else if (currentStep === 8) {
-                // Update the pregnancy status in the summary
-                updatePregnancy(value);
-            } else if (currentStep === 9) {
-                // Update health insurance status in the summary
-                updateInsurance(value);
-            } else if (currentStep === 10) {
-                // Update agreement status in the summary
-                updateAgreement('Agreed');
-            }
-        } else {
-            alert('Fields are required.');
-        }
-    }
-
-    // Function to validate the input fields in a step
-    function validateStep(step) {
-        let inputFields = step.querySelectorAll('.form-control[required]');
-        for (let input of inputFields) {
-            if (!input.checkValidity()) {
-                return false;
+            if (status === 'Type 2 Diabetes' || status === 'Pre-diabetes') {
+                startButton.style.display = 'block';
+                startButton.textContent = `Start ${diabetesType} Test`;
+                startButton.onclick = function() {
+                    // You can add code here to handle the Type 2 Diabetes or Pre-diabetes test.
+                    hideDiabetesModal();
+                };
+            } else {
+                startButton.style.display = 'none';
             }
         }
 
-        if (step.id === 'step-10' && !document.getElementById('agreement').checked) {
-            return false;
+        // Function to hide the diabetes status modal
+        function hideDiabetesModal() {
+            const modal = document.getElementById('diabetesModal');
+            modal.style.display = 'none';
         }
 
-        return true;
-    }
 
-    // Function to show the summary
-    function showSummary() {
-        let form = document.getElementById('form');
-        if (form.checkValidity() && validateStep(document.getElementById('step-10'))) {
-            document.getElementById('step-10').classList.remove('active');
-            document.getElementById('step-11').classList.add('active');
-
-            document.getElementById('summary-state').textContent = document.getElementById('state').value;
-            document.getElementById('summary-first-name').textContent = document.getElementById('first-name').value;
-            document.getElementById('summary-last-name').textContent = document.getElementById('last-name').value;
-            document.getElementById('summary-date-of-birth').textContent = document.getElementById('date-of-birth').value;
-            document.getElementById('summary-email').textContent = document.getElementById('email').value;
-        } else {
-            alert('Fields are required.');
+        // Function to hide the age restriction modal
+        function hideAgeModal() {
+            const modal = document.getElementById('ageModal');
+            modal.style.display = 'none';
         }
-    }
 
-    // Function to navigate to the previous step
-    function prevStep(currentStep) {
-                let step = document.getElementById('step-' + currentStep);
-                let prevStep = document.getElementById('step-' + (currentStep - 1));
+        // Function to show the age restriction modal if the age is less than 18
+        function checkAgeRestriction() {
+            const dateOfBirth = document.getElementById('date-of-birth').value;
+            const today = new Date();
+            const birthDate = new Date(dateOfBirth);
+            const age = today.getFullYear() - birthDate.getFullYear();
+            if (today.getMonth() < birthDate.getMonth() || (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            if (age < 18) {
+                showAgeModal();
+            } else {
+                nextStep(2); // Proceed to the next step (Date of Birth and Email).
+            }
+        }
+
+        // Function to hide the age restriction modal
+        function hideAgeModal() {
+            const modal = document.getElementById('ageModal');
+            modal.style.display = 'none';
+        }
+
+        // Function to navigate to the next step
+        function nextStep(currentStep, value) {
+            let step = document.getElementById('step-' + currentStep);
+            let nextStep = document.getElementById('step-' + (currentStep + 1));
+
+            if (currentStep === 10 && !document.getElementById('agreement').checked) {
+                alert('You must agree to the terms to proceed.');
+            } else if (validateStep(step)) {
                 step.classList.remove('active');
-                prevStep.classList.add('active');
+                nextStep.classList.add('active');
 
-                // Highlight the selected options when navigating back
-                if (currentStep === 3 || currentStep === 4 || currentStep === 5) {
-                    prevStep.querySelectorAll('button').forEach(btn => {
-                        if (btn.textContent === selectedGender || btn.textContent === selectedDiabetes) {
-                            btn.classList.add('btn-selected');
-                        } else {
-                            btn.classList.remove('btn-selected');
-                        }
-                    });
+                if (currentStep === 3 || currentStep === 4) {
+                    // Store user's selection in the summary
+                    updateSummary(currentStep, value);
                 } else if (currentStep === 8) {
-                    // Highlight the selected pregnancy option
-                    prevStep.querySelectorAll('button').forEach(btn => {
-                        if (btn.textContent === selectedPregnant) {
-                            btn.classList.add('btn-selected');
-                        } else {
-                            btn.classList.remove('btn-selected');
-                        }
-                    });
+                    // Update the pregnancy status in the summary
+                    updatePregnancy(value);
                 } else if (currentStep === 9) {
-                    // Highlight the selected insurance option
-                    prevStep.querySelectorAll('button').forEach(btn => {
-                        if (btn.textContent === selectedInsurance) {
-                            btn.classList.add('btn-selected');
-                        } else {
-                            btn.classList.remove('btn-selected');
-                        }
-                    });
+                    // Update health insurance status in the summary
+                    updateInsurance(value);
+                } else if (currentStep === 10) {
+                    // Update agreement status in the summary
+                    updateAgreement('Agreed');
+                } else if (currentStep === 5) {
+                    // Update Medications in the summary
+                    updateMedications();
+                } else if (currentStep === 6) {
+                    // Update Height and Weight in the summary
+                    updateHeight();
+                    updateWeight();
+                } else if (currentStep === 7) {
+                    // Update Allergies in the summary
+                    updateAllergies();
+                } else if (currentStep === 10) {
+                    // Update Phone Number in the summary
+                    updatePhoneNumber();
+                }
+
+
+            } else {
+                alert('Fields are required.');
+            }
+        }
+
+        // Function to validate the input fields in a step
+        function validateStep(step) {
+            let inputFields = step.querySelectorAll('.form-control[required]');
+            for (let input of inputFields) {
+                if (!input.checkValidity()) {
+                    return false;
                 }
             }
-</script>
 
+            if (step.id === 'step-10' && !document.getElementById('agreement').checked) {
+                return false;
+            }
+
+            return true;
+        }
+
+        // Function to show the summary
+        function showSummary() {
+            let form = document.getElementById('form');
+            if (form.checkValidity() && validateStep(document.getElementById('step-10'))) {
+                document.getElementById('step-10').classList.remove('active');
+                document.getElementById('step-11').classList.add('active');
+
+                document.getElementById('summary-state').textContent = document.getElementById('state').value;
+                document.getElementById('summary-first-name').textContent = document.getElementById('first-name').value;
+                document.getElementById('summary-last-name').textContent = document.getElementById('last-name').value;
+                document.getElementById('summary-date-of-birth').textContent = document.getElementById('date-of-birth').value;
+                document.getElementById('summary-email').textContent = document.getElementById('email').value;
+            } else {
+                alert('Fields are required.');
+            }
+        }
+
+        // Function to navigate to the previous step
+        function prevStep(currentStep) {
+            let step = document.getElementById('step-' + currentStep);
+            let prevStep = document.getElementById('step-' + (currentStep - 1));
+            step.classList.remove('active');
+            prevStep.classList.add('active');
+
+            // Highlight the selected options when navigating back
+            if (currentStep === 3 || currentStep === 4 || currentStep === 5) {
+                prevStep.querySelectorAll('button').forEach(btn => {
+                    if (btn.textContent === selectedGender || btn.textContent === selectedDiabetes) {
+                        btn.classList.add('btn-selected');
+                    } else {
+                        btn.classList.remove('btn-selected');
+                    }
+                });
+            } else if (currentStep === 8) {
+                // Highlight the selected pregnancy option
+                prevStep.querySelectorAll('button').forEach(btn => {
+                    if (btn.textContent === selectedPregnant) {
+                        btn.classList.add('btn-selected');
+                    } else {
+                        btn.classList.remove('btn-selected');
+                    }
+                });
+            } else if (currentStep === 9) {
+                // Highlight the selected insurance option
+                prevStep.querySelectorAll('button').forEach(btn => {
+                    if (btn.textContent === selectedInsurance) {
+                        btn.classList.add('btn-selected');
+                    } else {
+                        btn.classList.remove('btn-selected');
+                    }
+                });
+            }
+        }
+        </script>
+    </div>
+    <div id="diabetesModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <span class="close" onclick="hideDiabetesModal()">&times;</span>
+                <p id="diabetesModalContent"></p>
+                <button id="startDiabetesButton" class="modal-button">Start Test</button>
+            </div>
+        </div>
     </div>
 
-
-
-<div id="diabetesModal" class="modal fade">
-      <div class="modal-dialog">
-    <div class="modal-content">
-        <span class="close" onclick="hideDiabetesModal()">&times;</span>
-        <p id="diabetesModalContent"></p>
-        <button id="startDiabetesButton" class="modal-button">Start Test</button>
+    <div id="messageModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <span class="close" onclick="hideMessageModal()">&times;</span>
+            <p id="messageModalContent"></p>
+        </div>
     </div>
 </div>
-</div>
-
-
 
 </body>
 
