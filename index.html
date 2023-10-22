@@ -5,16 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <style>
+         <style>
         /* Custom CSS for responsive design and styling */
         body {
-            background-color: #f5f5f5;
+            background: url('diabetes-background.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
         .container {
             background-color: #fff;
             padding: 30px;
-            border-radius: 5px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            text-align: center;
         }
 
         .questionnaire {
@@ -23,7 +42,7 @@
 
         .step {
             display: none;
-            width: 100%; /* Ensure all steps have the same width */
+            width: 100%;
         }
 
         .step.active {
@@ -50,44 +69,42 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100%; /* Make step content 100% width for mobile screens */
+            width: 100%;
         }
 
         .btn-primary {
-            background-color: rgb(246, 244, 238);
-            border: 2px solid rgb(246, 244, 238);
-            border-radius: 0;
-            color: #333;
-            width: 100%; /* Ensure buttons take up the full width */
+            background-color: #007B7F;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            width: 100%;
             padding: 12px;
             font-size: 18px;
             margin: 10px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .btn-primary:hover {
-            background-color: rgb(5, 114, 122);
-            color: #fff;
+            background-color: #005C5F;
         }
 
-        /* Highlight the selected button */
         .btn-selected {
-            background-color: rgb(5, 114, 122);
-            color: #fff;
+            background-color: #005C5F;
         }
 
-        /* Style buttons on hover to give a similar effect */
-        .btn-primary:hover,
         .btn-selected:hover {
-            background-color: rgb(5, 114, 122);
-            color: #fff;
+            background-color: #005C5F;
         }
 
         .form-control {
-            border: 2px solid rgb(246, 244, 238);
-            border-radius: 0;
+            border: 2px solid #007B7F;
+            border-radius: 5px;
             padding: 10px;
             font-size: 16px;
-            width: 100%; /* Make inputs 100% width for mobile screens */
+            width: 100%;
         }
 
         .summary {
@@ -97,66 +114,68 @@
             border: 2px solid #ddd;
             border-radius: 5px;
             margin: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
-            /* Modal Styling */
-    .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.4);
-        z-index: 1;
-    }
 
-    .modal-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #fff;
-        padding: 50px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        text-align: center;
-    }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
 
-    .close {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 24px;
-        cursor: pointer;
-    }
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
 
-    .modal-button {
-            background-color: rgb(246, 244, 238);
-            border: 2px solid rgb(246, 244, 238);
-            border-radius: 0;
-            color: #333;
-            width: 100%; /* Ensure buttons take up the full width */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .modal-button {
+            background-color: #007B7F;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            width: 100%;
             padding: 12px;
             font-size: 18px;
             margin: 10px 0;
-    }
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .modal-button:hover {
-         background-color: rgb(5, 114, 122);
-            color: #fff;
-    }
+        .modal-button:hover {
+            background-color: #005C5F;
+        }
 
         @media (min-width: 768px) {
-            /* Adjust the layout for larger screens (desktop) */
             .step-content {
                 flex-direction: row;
                 justify-content: center;
                 width: 33%;
             }
-            .btn-primary {
-                width: 100%; /* Ensure all buttons have equal size as step content */
-            }
+              .container {
+        width: 70%; /* Adjust the width for desktop screens */
+    }
         }
     </style>
 </head>
