@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fahkwang:400,700">
+    <title>Patients - StatusWell</title>
+    <style>
+        :root {
+            --button-hover-color: #35648D;
+            --root-background-color: #f5f5f5;
+            --root-text-color: #000;
+            --root-button-color: SteelBlue;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: var(--root-background-color);
+            padding: 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--root-text-color);
+            padding: 10px 0;
+        }
+
+      
+        .header {
+/*            background-image: url('image.png');*/
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 10px 0;
+            text-align: left;
+            color: #fff;
+        }
+
+        .header h1, .header p {
+            color: #000;
+        }
+
+        .cta-button {
+            display: block;
+            width: 33%;
+            padding: 10px 20px;
+            background-color: var(--root-button-color);
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--button-hover-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .patients-heading {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .patient-cards {
+            margin-top: 20px;
+        }
+
+        .patient-card .card {
+            text-align: left;
+            padding: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-content {
+            text-align: left;
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 20px;
+        }
+
+        .btn-sign-in {
+            background-color: var(--root-button-color);
+            color: #fff;
+            font-weight: bold;
+            padding: 10px 20px; /* Adjusted button size for desktop */
+            border-radius: 5px;
+        }
+
+        .header p {
+            text-align: justify;
+        }
+
+        .header-img {
+            width: 100%; /* Full-width for desktop */
+        }
+
+        .rounded-img {
+            border-radius: 15px; /* Rounded corners for the image */
+        }
+
+        @media (max-width: 767px) {
+            .header p {
+                text-align: left;
+                font-size: 18px; /* Smaller font size for mobile */
+            }
+            .cta-button {
+                width: 60%; /* Smaller width for mobile */
+            }
+            .header-img {
+                display: none; /* Hide the image on mobile */
+            }
+        }
+
+        @media (min-width: 768px) {
+            .patient-cards .patient-card {
+                display: flex;
+            }
+
+            .patient-cards .patient-card .card {
+                width: 100%;
+            }
+        }
+
+            /* Previous CSS styles here */
+ 
+        
+
+
+
+
+        /* In your existing CSS or add these styles */
+.patient-circles {
+    background-color: steelblue;
+    padding: 20px 20px 80px 20px;
+    opacity: 0.8;
+}
+.circle {
+    background-color: #fff;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+}
+
+
+
+.circle img {
+    max-width: 40px;
+    max-height: 40px;
+    display: block;
+}
+
+.circle p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+    .patient-circles {
+        text-align: center;
+    }
+}
+
+
+
+.circle:hover {
+    transform: scale(1.1); /* Add 3D effect on hover */
+}
+  /* Default styles for desktop screens */
+.full-page-section {
+    background-image: url('pact.jpg');
+    background-size: cover;
+    background-position: top;
+    padding: 50px 0;
+    text-align: left;
+    color: #fff;
+    height: 80vh;
+    padding-top: 150px;
+}
+
+.section-heading {
+    font-size: 36px; /* Adjust the font size as needed */
+    color: SteelBlue;
+}
+
+.section-paragraph {
+    font-size: 24px; /* Adjust the font size as needed */
+    color: SteelBlue;
+}
+
+/* Styles for mobile screens */
+@media (max-width: 767px) {
+    .section-heading, .section-paragraph {
+        font-size: 24px; /* Smaller font size for mobile */
+      
+    }
+}
+
+                #logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: SteelBlue;
+    font-family: 'Fahkwang', sans-serif;
+}
+
+
+
+    </style>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" id="logo">StatusWell</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="ourapproach.html">Our Approach</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="patient.html">Patients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partner.html">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faqs.html">FAQs</a>
+                    </li>
+                </ul>
+                <a href="#sign-in" class="btn btn-primary btn-sign-in">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Access to personalized care to achieve your health goals</h1>
+                    <p>
+                        StatusWell personalizes your experience based on your current health status, history and short and
+                        long-term health goals. All of our programs include access to a devoted healthcare provider that
+                        meets with you based on your healthcare needs. Whether you have been diagnosed with type 2 diabetes
+                        previously, have been told you’re at-risk for diabetes or are interested in managing your weight to
+                        reduce potential health risks – our team of providers, nutritionists, pharmacists and clinical
+                        coordinators are here to help you every step of the way.
+                    </p>
+                    <a href="questionare.html" class="cta-button btn btn-primary">Get Started</a>
+                </div>
+                <div class="col-md-6">
+                    <img class="header-img rounded-img"
+                        src="paicient.jpg"
+                        alt="Header Image">
+                </div>
+            </div>
+        </div>
+    </header>
+  <main class="main">
+        <div class="container">
+            <h2 class="patients-heading">Programs for the Individual</h2>
+            <div class="row patient-cards">
+                <div class="col-md-4 patient-card"> <!-- Changed to col-md-4 to create a three-column grid -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="card-title">Diabetes Care</h5>
+                            <ul>
+                                <li>Learn how to manage your diabetes effectively with continuous glucose monitoring (CGM)</li>
+                                <li>Receive personalized medication management and nutrition/activity plans</li>
+                                <li>Get coordinated care that allows your primary care doctor to be in the loop</li>
+                                <li>Meet with your provider and track your progress in the StatusWell app</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 patient-card"> <!-- Changed to col-md-4 to create a three-column grid -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="card-title">Diabetes Prevention</h5>
+                            <ul>
+                                <li>Discover your risks with continuous glucose monitoring (CGM)</li>
+                                <li>Reduce your risk with effective diabetes prevention and weight care</li>
+                                <li>Receive personalized medication management and nutrition/activity plans</li>
+                                <li>Meet with your provider and track your progress in the StatusWell app</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 patient-card"> <!-- Changed to col-md-4 to create a three-column grid -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="card-title">Weight Care</h5>
+                            <ul>
+                                <li>Learn how your body metabolizes sugar through continuous glucose monitoring (CGM)</li>
+                                <li>Get access to weight management medications that can help you achieve your goals</li>
+                                <li>Receive personalized nutrition and activity plans</li>
+                                <li>Meet with your provider and track your progress in the StatusWell app</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+<section class="container-fluid patient-circles">
+     <h2 class="patients-heading mb-5">Health goals customized to you</h2>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 text-center">
+            <div class="circle">
+                <img src="type2.png" alt="Circle Icon 1" >
+            </div>
+            <p class="mt-2">Manage diabetes</p>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-sm-6 text-center" >
+            <div class="circle" >
+                <img src="risk.png" alt="Circle Icon 2">
+            </div>
+            <p class="mt-2">Reduce risk</p>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-sm-6 text-center">
+            <div class="circle">
+                <img src="access.png" alt="Circle Icon 3">
+            </div>
+            <p class="mt-2">Access medication</p>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-sm-6 text-center">
+            <div class="circle">
+                <img src="eat.png" alt="Circle Icon 4">
+            </div>
+            <p class="mt-2">Eat better</p>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-sm-6 text-center">
+            <div class="circle">
+                <img src="active.png" alt="Circle Icon 5">
+            </div>
+            <p class="mt-2">Get active</p>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-sm-6 text-center">
+            <div class="circle">
+                <img src="track.png" alt="Circle Icon 6">
+            </div>
+            <p class="mt-2">Track progress</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Section 2: Full-page section with text and button -->
+<section class="full-page-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6  text-lg-left">
+                <h2 class="section-heading">StatusWell</h2>
+                <p class="section-paragraph">Discover your health status</p>
+                <a href="questionare.html" class="cta-button btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

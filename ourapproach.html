@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- You can link your custom CSS file here -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fahkwang:400,700">
+    <title>Our Approach - StatusWell</title>
+    <style>
+        /* Your custom CSS styles go here */
+
+             :root {
+            --button-hover-color: #35648D;
+            --root-background-color: #f5f5f5;
+            --root-text-color: #000;
+            --root-button-color: SteelBlue;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: var(--root-background-color);
+            padding: 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--root-text-color);
+            padding: 10px 0;
+        }
+
+      
+        .header {
+/*            background-image: url('image.png');*/
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 10px 0;
+            text-align: left;
+            color: #fff;
+        }
+
+        .header h1, .header p {
+            color: #000;
+        }
+
+        .cta-button {
+            display: block;
+            width: 33%;
+            padding: 10px 20px;
+            background-color: var(--root-button-color);
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--button-hover-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .patients-heading {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .patient-cards {
+            margin-top: 20px;
+        }
+
+        .patient-card .card {
+            text-align: left;
+            padding: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-content {
+            text-align: left;
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 20px;
+        }
+
+        .btn-sign-in {
+            background-color: var(--root-button-color);
+            color: #fff;
+            font-weight: bold;
+            padding: 10px 20px; /* Adjusted button size for desktop */
+            border-radius: 5px;
+        }
+
+        .header p {
+            text-align: justify;
+        }
+
+        .header-img {
+            width: 100%; /* Full-width for desktop */
+        }
+
+        .rounded-img {
+            border-radius: 15px; /* Rounded corners for the image */
+        }
+
+        @media (max-width: 767px) {
+            .header p {
+                text-align: left;
+                font-size: 18px; /* Smaller font size for mobile */
+            }
+            .cta-button {
+                width: 60%; /* Smaller width for mobile */
+            }
+            .header-img {
+                display: none; /* Hide the image on mobile */
+            }
+        }
+
+        @media (min-width: 768px) {
+            .patient-cards .patient-card {
+                display: flex;
+            }
+
+            .patient-cards .patient-card .card {
+                width: 100%;
+            }
+        }
+
+
+        .our-approach {
+            background: #f5f5f5; /* Set background color */
+            padding: 50px 0; /* Add appropriate padding */
+        }
+
+        .our-approach h2 {
+            font-size: 24px; /* Adjust font size as needed */
+        }
+
+        .our-approach p {
+            font-size: 18px; /* Adjust font size as needed */
+        }
+
+        .our-approach-img {
+            max-width: 100%; /* Ensure the image is responsive */
+            border-radius: 10px; /* Add rounded corners to the image */
+        }
+
+        .team-experts {
+            background: #f5f5f5; /* Set background color */
+            padding: 50px 0; /* Add appropriate padding */
+        }
+
+        .team-experts h3 {
+            font-size: 24px; /* Adjust font size as needed */
+        }
+
+        .team-experts p {
+            font-size: 18px; /* Adjust font size as needed */
+        }
+
+        .team-experts ul {
+            list-style: none; /* Remove default list styles */
+            padding: 0;
+        }
+
+        .team-experts li {
+            font-size: 18px; /* Adjust font size as needed */
+
+        }
+
+        .expert-points {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-items: center;
+
+        }
+
+        .expert-points .point {
+            flex-basis: calc(33.33% - 20px);
+            padding: 10px;
+            border-radius: 50%;
+            background: #fff;
+            text-align: center;
+            margin-top: 10px;
+            background-color: steelblue;
+            color: #fff;
+        }
+
+        p{
+            margin-top: 11px;
+        }
+
+                #logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: SteelBlue;
+    font-family: 'Fahkwang', sans-serif;
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation bar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" id="logo">StatusWell</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="ourapproach.html">Our Approach</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="patient.html">Patients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partner.html">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faqs.html">FAQs</a>
+                    </li>
+                </ul>
+                <a href="#sign-in" class="btn btn-primary btn-sign-in">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+
+        <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Compassionate Diabetes and Weight Care for individuals of any health status</h1>
+                    <p>
+                        Whether you have been diagnosed with type 2 diabetes, have been told you are at-risk for diabetes, want to better manage your weight or are unsure of your current healthcare status – we want to help you every step of the way.
+                    </p>
+                    <a href="questionare.html" class="cta-button btn btn-primary">Get Started</a>
+                </div>
+                <div class="col-md-6">
+                    <img class="header-img rounded-img"
+                        src="ourapproach.jpg"
+                        alt="Header Image">
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+      <main class="main">
+        <div class="container">
+            <h2 class="patients-heading">Programs for the Individual</h2>
+            <div class="row patient-cards">
+                <div class="col-md-4 patient-card"> <!-- Changed to col-md-4 to create a three-column grid -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="card-title">Diabetes Care</h5>
+                            <ul>
+                                <li>Learn how to manage your diabetes effectively with continuous glucose monitoring (CGM)</li>
+                                <li>Receive personalized medication management and nutrition/activity plans</li>
+                                <li>Get coordinated care that allows your primary care doctor to be in the loop</li>
+                                <li>Meet with your provider and track your progress in the StatusWell app</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 patient-card"> <!-- Changed to col-md-4 to create a three-column grid -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="card-title">Diabetes Prevention</h5>
+                            <ul>
+                                <li>Discover your risks with continuous glucose monitoring (CGM)</li>
+                                <li>Reduce your risk with effective diabetes prevention and weight care</li>
+                                <li>Receive personalized medication management and nutrition/activity plans</li>
+                                <li>Meet with your provider and track your progress in the StatusWell app</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 patient-card"> <!-- Changed to col-md-4 to create a three-column grid -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="card-title">Weight Care</h5>
+                            <ul>
+                                <li>Learn how your body metabolizes sugar through continuous glucose monitoring (CGM)</li>
+                                <li>Get access to weight management medications that can help you achieve your goals</li>
+                                <li>Receive personalized nutrition and activity plans</li>
+                                <li>Meet with your provider and track your progress in the StatusWell app</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="team-experts">
+        <div class="container">
+            <h2>Our Team of Experts</h2>
+            <p>
+                Scheduling appointments with local providers can be stressful and inaccessible. At StatusWell, we believe you should be able to meet with the providers you need most. Our team of experts will guide you through your health journey on your time.
+            </p>
+
+           
+
+            <div class="expert-points">
+                <div class="point">
+                   
+                    <p>Physicians</p>
+                </div>
+                <div class="point">
+                    
+                    <p>Nurse Practitioners</p>
+                </div>
+                <div class="point">
+                   
+                    <p>Nutritionists</p>
+                </div>
+                <div class="point">
+                   
+                    <p>Clinical Pharmacists</p>
+                </div>
+                <div class="point">
+                    
+                    <p>Clinical Coordinators</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

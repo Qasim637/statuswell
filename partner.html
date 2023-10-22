@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fahkwang:400,700">
+    <link rel="stylesheet" href="styles.css">
+    <title>Partner with StatusWell</title>
+    <style>
+        :root {
+            --button-hover-color: #35648D;
+            --root-background-color: #f5f5f5;
+            --root-text-color: #000;
+            --root-button-color: SteelBlue;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: var(--root-background-color);
+            padding: 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--root-text-color);
+            padding: 10px 0;
+        }
+
+        
+
+        .header {
+            background-image: url('partner-header-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 10px 0;
+            text-align: left;
+            color: #fff;
+        }
+
+        .header h1, .header p {
+            color: #000;
+        }
+
+        .cta-button {
+            display: block;
+            width: 33%;
+            padding: 10px 20px;
+            background-color: var(--root-button-color);
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--button-hover-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .partners-heading {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .partner-cards {
+            margin-top: 20px;
+        }
+
+        .partner-card .card {
+            text-align: left;
+            padding: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 20px;
+        }
+
+        .btn-sign-in {
+            background-color: var(--root-button-color);
+            color: #fff;
+            font-weight: bold;
+            padding: 10px 20px; /* Adjusted button size for desktop */
+            border-radius: 5px;
+        }
+
+        .header p {
+            text-align: justify;
+        }
+
+        @media (max-width: 767px) {
+            .header p {
+                text-align: left;
+                font-size: 18px; /* Smaller font size for mobile */
+            }
+            .cta-button {
+                width: 60%; /* Smaller width for mobile */
+            }
+        }
+
+        @media (min-width: 768px) {
+            .partner-cards .partner-card {
+                display: flex;
+            }
+
+            .partner-cards .partner-card .card {
+                width: 100%;
+            }
+             .header p {
+                text-align: left;
+                font-size: 30px; /* Smaller font size for mobile */
+            }
+        }
+
+                        #logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: SteelBlue;
+    font-family: 'Fahkwang', sans-serif;
+}
+    </style>
+</head>
+<body>
+         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" id="logo">StatusWell</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="ourapproach.html">Our Approach</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="patient.html">Patients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partner.html">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faqs.html">FAQs</a>
+                    </li>
+                </ul>
+                <a href="#sign-in" class="btn btn-primary btn-sign-in">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <h1>Partner with StatusWell</h1>
+            <p>
+                We partner with primary care providers, hospitals & health systems, health plans, and employers to offer
+                patients seamless coordinated care.
+            </p>
+            <a href="questionare.html" class="cta-button btn btn-primary">Get Started</a>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <h2 class="partners-heading">Why Partner with Us?</h2>
+            <div class="row partner-cards">
+                <div class="col-md-3 partner-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Primary Care Providers</h5>
+                            <p>
+                                StatusWell collaborates with primary care providers in an effort to identify patients with
+                                metabolic health needs. We offer coordinated care that removes the guesswork in recommending
+                                appropriate diabetic and weight care interventions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 partner-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Hospitals & Health Systems</h5>
+                            <p>
+                                Research reports that diabetes increases the risk for 30-day hospital readmission by at least
+                                17% and up to 2.5-fold. We offer coordinated care with primary goals in reducing hospital
+                                readmission risk and improving patient outcomes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 partner-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Health Plans</h5>
+                            <p>
+                                StatusWell offers programs that focus on improving patient outcomes and reducing costly
+                                hospital admissions. Our approach streamlines an effective care delivery model that works with
+                                your ecosystem and ensures member satisfaction.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 partner-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Employers</h5>
+                            <p>
+                                37.3 million people have diabetes in the US, with more than 2 in 5 adults having obesity that
+                                may increase their risk for diabetes and other health conditions. We offer accessible virtual
+                                care for all employees in an effort to keep your employees happy and healthy and reduce risk for
+                                negative outcomes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <main class="main">
+        <div class="container">
+            <h2 class="partners-heading">Why Partner with Us?</h2>
+            <div class="row partner-cards">
+                <div class="col-md-3 partner-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Primary Care Providers</h5>
+                            <ul>
+                                <li>Collaboration with primary care providers to identify patients with metabolic health needs</li>
+                                <li>Coordinated care that removes the guesswork in recommending appropriate diabetic and weight care interventions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 partner-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Hospitals & Health Systems</h5>
+                            <ul>
+                                <li>Reduction of hospital readmission risk and improvement of patient outcomes</li>
+                                <li>Collaborative care with primary goals in reducing hospital readmission risk</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 partner-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Health Plans</h5>
+                            <ul>
+                                <li>Programs focusing on improving patient outcomes and reducing costly hospital admissions</li>
+                                <li>An approach that streamlines an effective care delivery model to ensure member satisfaction</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 partner-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Employers</h5>
+                            <ul>
+                                <li>Accessible virtual care for all employees to reduce risk for negative outcomes</li>
+                                <li>Efforts to keep employees happy and healthy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
