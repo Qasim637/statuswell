@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fahkwang:400,700">
-
-
   
     <title>StatusWell - Home</title>
     <style>
@@ -15,15 +13,13 @@
             --button-hover-color: #35648D;
         }
 
-        /* Reset some default styles */
-       
-
         body {
-            font-family: Arial, sans-serif;
-            background-image: url('homepage-image.jpg'); /* Set your background image */
+            font-family: 'Calibri Light', Arial, sans-serif; /* Use Calibri Light font */
+            background-image: url('homepage-image.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Fixed background for a full-page effect */
+            background-attachment: fixed;
+            margin: 0; /* Reset margin to remove default margin */
         }
 
         .main {
@@ -42,7 +38,7 @@
             font-weight: bold;
             border-radius: 5px;
             margin-top: 20px;
-            transition: background-color 0.3s; /* Add a transition effect for button hover */
+            transition: background-color 0.3s;
         }
 
         .cta-button:hover {
@@ -61,20 +57,18 @@
             color: var(--root-text-color, #000);
             padding: 20px 0;
         }
-
+/*
         .navbar-toggler-icon {
             background-color: var(--root-text-color, #000);
-        }
+        }*/
 
-         .navbar-nav .nav-item {
+        .navbar-nav .nav-item {
             margin-right: 20px;
         }
 
         .navbar-nav {
             margin-left: auto;
         }
-
-      
 
         .btn-sign-in {
             background-color: SteelBlue;
@@ -86,17 +80,17 @@
 
         .header h1 {
             text-align: left;
-             font-size: 24px;
-             font-family: 'Fahkwang', sans-serif; /* Use Fahkwang font */
-            color: SteelBlue; /* Blue color */
+            font-size: 24px;
+            font-family: 'Fahkwang', sans-serif;
+            color: SteelBlue;
         }
 
         .header p {
             text-align: left;
             font-size: 36px;
             padding-top: 10px;
-              font-family: 'Fahkwang', sans-serif; /* Use Fahkwang font */
-            color: SteelBlue; /* Blue color */
+            font-family: 'Fahkwang', sans-serif;
+            color: SteelBlue;
             font-style: italic;
         }
 
@@ -143,23 +137,22 @@
         .header .row {
             display: flex;
             flex-direction: column;
-            align-items: flex-end; /* Align content to the right */
+            align-items: flex-end;
             text-align: right;
-            margin-right: 20px; /* Add margin to control spacing */
+            margin-right: 20px;
         }
 
         #logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: SteelBlue;
-    font-family: 'Fahkwang', sans-serif;
-}
+            font-size: 24px;
+            font-weight: bold;
+            color: SteelBlue;
+            font-family: 'Fahkwang', sans-serif;
+        }
     </style>
 </head>
 
 <body>
-
-     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="index.html" id="logo">StatusWell</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -186,22 +179,12 @@
         </div>
     </nav>
     <header class="header">
-     
-        
-    </header>
-    <main class="main">
-        <!-- Your content goes here -->
-        <div class="container">
-            
-            <div class="header mt-5 pt-5">
+        <div class="container mt-5 pt-5">
             <h1>StatusWell</h1>
             <p class="sub-text">Diabetes & Weight Care,<br> Personalized to you.</p>
             <a href="questionare.html" class="cta-button btn btn-primary">Get Started</a>
-        
-            </div>
         </div>
-    </main>
+    </header>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
-
 </html>

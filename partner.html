@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +14,11 @@
             --root-background-color: #f5f5f5;
             --root-text-color: #000;
             --root-button-color: SteelBlue;
+            --font-family: 'Calibri Light', Arial, sans-serif; /* Calibri Light font */
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: var(--font-family); /* Apply font family to the entire page */
         }
 
         .navbar {
@@ -32,8 +34,6 @@
             padding: 10px 0;
         }
 
-        
-
         .header {
             background-image: url('partner-header-image.jpg');
             background-size: cover;
@@ -46,6 +46,7 @@
 
         .header h1, .header p {
             color: #000;
+            font-family: var(--font-family); /* Apply font family to headings and paragraphs */
         }
 
         .cta-button {
@@ -77,6 +78,7 @@
             color: #000;
             margin-top: 20px;
             text-align: left;
+            font-family: var(--font-family); /* Apply font family to headings */
         }
 
         .partner-cards {
@@ -128,22 +130,24 @@
             .partner-cards .partner-card .card {
                 width: 100%;
             }
-             .header p {
+
+            .header p {
                 text-align: left;
                 font-size: 30px; /* Smaller font size for mobile */
             }
         }
 
-                        #logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: SteelBlue;
-    font-family: 'Fahkwang', sans-serif;
-}
+        #logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: SteelBlue;
+            font-family: 'Fahkwang', sans-serif;
+        }
     </style>
 </head>
+
 <body>
-         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="index.html" id="logo">StatusWell</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -238,58 +242,7 @@
         </div>
     </main>
 
-    <main class="main">
-        <div class="container">
-            <h2 class="partners-heading">Why Partner with Us?</h2>
-            <div class="row partner-cards">
-                <div class="col-md-3 partner-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Primary Care Providers</h5>
-                            <ul>
-                                <li>Collaboration with primary care providers to identify patients with metabolic health needs</li>
-                                <li>Coordinated care that removes the guesswork in recommending appropriate diabetic and weight care interventions</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 partner-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Hospitals & Health Systems</h5>
-                            <ul>
-                                <li>Reduction of hospital readmission risk and improvement of patient outcomes</li>
-                                <li>Collaborative care with primary goals in reducing hospital readmission risk</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 partner-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Health Plans</h5>
-                            <ul>
-                                <li>Programs focusing on improving patient outcomes and reducing costly hospital admissions</li>
-                                <li>An approach that streamlines an effective care delivery model to ensure member satisfaction</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 partner-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Employers</h5>
-                            <ul>
-                                <li>Accessible virtual care for all employees to reduce risk for negative outcomes</li>
-                                <li>Efforts to keep employees happy and healthy</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
+
 </html>

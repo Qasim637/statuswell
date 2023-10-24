@@ -13,10 +13,11 @@
             --root-background-color: #f5f5f5;
             --root-text-color: #000;
             --root-button-color: SteelBlue;
+            --font-family: 'Calibri Light', Arial, sans-serif; /* Define Calibri Light with fallback */
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: var(--font-family); /* Use the defined font family with fallback */
         }
 
         .navbar {
@@ -214,7 +215,7 @@
 .section-paragraph {
     font-size: 24px; /* Adjust the font size as needed */
     color: SteelBlue;
-     font-family: 'Fahkwang', sans-serif; /* Use Fahkwang font */
+    font-family: 'Fahkwang', sans-serif; /* Use Fahkwang font */
     font-style: italic;
 }
 
