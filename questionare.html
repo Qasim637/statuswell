@@ -2,9 +2,11 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fahkwang:400,700">
+    
     <style>
         :root {
         --primary-background-color: #4682B4;
@@ -34,19 +36,117 @@
         --modal-button-background-color: var(--primary-background-color);
         --modal-button-text-color: #fff;
         --modal-button-hover-background-color: var(--button-hover-background-color);
+            --button-hover-color: #35648D;
+    --root-background-color: #f5f5f5;
+    --root-text-color: #000;
+    --root-button-color: #076ec2;
+
     }
 
-    body {
-        background: url('diabetes-background2.png') no-repeat center center fixed;
-        background-size: cover;
+    .navbar {
+    background-color: var(--root-background-color);
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.navbar-brand {
+    
+    font-weight: bold;
+    color: var(--root-text-color);
+    padding: 10px 0;
+}
+
+.navbar-toggler-icon {
+    background-color: var(--root-text-color);
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.nav-link {
+    font-size: 20px;
+    color: var(--root-text-color);
+    margin-right: 20px;
+}
+
+.btn-sign-in {
+    background-color: var(--root-button-color);
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+                        #logo {
+    font-size: 36px;
+    font-weight: bold;
+    color: #076ec2;
+    font-family: 'Fahkwang', sans-serif;
+}
+
+
+
+
+.navbar {
+    background-color: var(--root-background-color);
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.navbar-brand {
+    
+    font-weight: bold;
+    color: var(--root-text-color);
+    padding: 10px 0;
+}
+
+.navbar-toggler-icon {
+    background-color: var(--root-text-color);
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.nav-link {
+    font-size: 20px;
+    color: var(--root-text-color);
+    margin-right: 20px;
+}
+
+.btn-sign-in {
+    background-color: var(--root-button-color);
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+                        #logo {
+    font-size: 36px;
+    font-weight: bold;
+    color: #076ec2;
+    font-family: 'Fahkwang', sans-serif;
+}
+
+    body{
+   
         font-family: 'Calibri Light', Arial, sans-serif;
         margin: 0;
+       
+        background-color: var(--primary-background-color);
+        color: var(--text-color);
+
+    }
+
+    .questionare {
+     
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        background-color: var(--primary-background-color);
-        color: var(--text-color);
+        
     }
 
     .overlay {
@@ -58,7 +158,7 @@
         height: 100%;
     }
 
-    .container {
+    .container2 {
         background-color: var(--container-background-color);
         padding: var(--container-padding);
         border-radius: var(--container-border-radius);
@@ -211,17 +311,55 @@
             justify-content: center;
             width: 33%;
         }
-        .container{
+        .container2{
             width: 70%;
         }
     }
+
+
+    body {
+    font-family: Arial, sans-serif;
+}
+
+
+  
 </style>
 </head>
 
 <body>
-    <div class="container mt-5">
+     <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" id="logo">StatusWell</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="ourapproach.html">Our Approach</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="patient.html">Patients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partner.html">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faqs.html">FAQs</a>
+                    </li>
+                </ul>
+                <a href="#sign-in" class="btn-sign-in">Sign In</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="questionare">
+
+    <div class="container2 mt-5">
         <div class="questionnaire">
-            <h2>Diabetes Health Questionnaire</h2>
+            <h2>Health Questionnaire</h2>
             <form id="form" action="submit.php" method="post">
                 <!-- Step 1: Personal Information -->
                 <div class="step active" id="step-1">
@@ -412,6 +550,8 @@
                 </div>
             </form>
         </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
         <script>
         // Initialize variables to store the selected options for steps 3 and 4
         let selectedGender = '';
@@ -431,7 +571,7 @@
             }
         }
 
-  
+
 
         // Function to hide the diabetes status modal
         function hideDiabetesModal() {
@@ -449,7 +589,7 @@
         }
 
 
-   
+
 
         // Function to update the selected option for Step 9 (Health Insurance)
         function updateInsurance(value) {
@@ -508,19 +648,19 @@
         }
 
         // Function to show a modal with a message
-function showMessageModal(message) {
-    const modal = document.getElementById('messageModal');
-    const modalContent = document.getElementById('messageModalContent');
+        function showMessageModal(message) {
+            const modal = document.getElementById('messageModal');
+            const modalContent = document.getElementById('messageModalContent');
 
-    modal.style.display = 'block';
-    modalContent.textContent = message;
-}
+            modal.style.display = 'block';
+            modalContent.textContent = message;
+        }
 
-// Function to hide the message modal
-function hideMessageModal() {
-    const modal = document.getElementById('messageModal');
-    modal.style.display = 'none';
-}
+        // Function to hide the message modal
+        function hideMessageModal() {
+            const modal = document.getElementById('messageModal');
+            modal.style.display = 'none';
+        }
 
 
 
@@ -707,16 +847,14 @@ function hideMessageModal() {
             </div>
         </div>
     </div>
-
     <div id="messageModal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <span class="close" onclick="hideMessageModal()">&times;</span>
-            <p id="messageModalContent"></p>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <span class="close" onclick="hideMessageModal()">&times;</span>
+                <p id="messageModalContent"></p>
+            </div>
         </div>
     </div>
-</div>
-
 </body>
 
 </html>
