@@ -17,7 +17,8 @@
 }
 
 body {
-    font-family: var(--font-family); /* Use the defined font family with fallback */
+    font-family: var(--font-family) !important; /* Use the defined font family with fallback */
+      font-size: 26px;
 }
 
 .navbar {
@@ -100,6 +101,10 @@ body {
     font-size: 20px;
 }
 
+     .nav-link{
+            color: #076ec2;
+        }
+
 .btn-sign-in {
     background-color: var(--root-button-color);
     color: #fff;
@@ -123,7 +128,7 @@ body {
 @media (max-width: 767px) {
     .header p {
         text-align: left;
-        font-size: 18px; /* Smaller font size for mobile */
+        font-size: 24px; /* Smaller font size for mobile */
     }
     .cta-button {
         width: 60%; /* Smaller width for mobile */
@@ -131,6 +136,8 @@ body {
     .header-img {
         display: none; /* Hide the image on mobile */
     }
+
+
 }
 
 @media (min-width: 768px) {
@@ -141,6 +148,8 @@ body {
     .patient-cards .patient-card .card {
         width: 100%;
     }
+
+
 }
 
 .our-approach {
@@ -171,7 +180,7 @@ body {
 }
 
 .team-experts p {
-    font-size: 18px; /* Adjust font size as needed */
+    font-size: 26px; /* Adjust font size as needed */
 }
 
 .team-experts ul {
@@ -180,7 +189,7 @@ body {
 }
 
 .team-experts li {
-    font-size: 18px; /* Adjust font size as needed */
+    font-size: 24px; /* Adjust font size as needed */
 }
 
 .expert-points {
